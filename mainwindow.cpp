@@ -19,6 +19,7 @@ MainWindow::~MainWindow()
 void MainWindow::on_OpenSourceFile_clicked()
 {
     filename=QFileDialog::getOpenFileName(this,QString::fromLocal8Bit("源文件"),"",tr("text(*.txt)"));
+    source=filename.toStdString();
     ui->dis_mainwindow->append(QString::fromLocal8Bit("打开源文件"));
     ui->dis_mainwindow->append(QString::fromLocal8Bit("源文件路径：")+filename);
 }
@@ -26,11 +27,12 @@ void MainWindow::on_OpenSourceFile_clicked()
 void MainWindow::on_inputfilepath_clicked()
 {
     resultFilename=QFileDialog::getExistingDirectory(this,QString::fromLocal8Bit("保存"),"/home",QFileDialog::ShowDirsOnly|QFileDialog::DontResolveSymlinks);
-    QString temp=resultFilename+QString("/gps_pos_834");
+    QString temp=resultFilename+QString("/gps_pos_834.txt");
     gps_pos=temp.toStdString();
-    temp=resultFilename+QString("/mode");
+    temp=resultFilename+QString("/mode.xlsx");
     gps_xml=temp.toStdString();
-    gps=resultFilename.toStdString();
+	temp = resultFilename + QString("/");
+	gps = temp.toStdString();
     ui->dis_mainwindow->append(QString::fromLocal8Bit("路径打开成功"));
 }
 
