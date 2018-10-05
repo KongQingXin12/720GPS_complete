@@ -7,6 +7,7 @@
 #include <QDebug>
 #include <QFileDialog>
 #include <QFileInfo>
+#include "qdesktopservices.h"
 #include "GPStxt_834.h"
 
 
@@ -28,6 +29,10 @@ private slots:
     void on_inputfilepath_clicked();
 
     void on_deal_with_clicked();
+
+    void on_DisplayPath_clicked();
+
+    void on_Quit_clicked();
 
 private:
     Ui::MainWindow *ui;

@@ -50,3 +50,14 @@ void MainWindow::on_deal_with_clicked()
         ui->dis_mainwindow->append(QString::fromLocal8Bit("处理失败"));
 
 }
+
+void MainWindow::on_DisplayPath_clicked()
+{
+    QDesktopServices::openUrl(resultFilename);//QUrl::TolerantMode
+}
+
+void MainWindow::on_Quit_clicked()
+{
+    QApplication *app;
+    app->quit();
+}
