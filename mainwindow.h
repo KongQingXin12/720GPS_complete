@@ -34,6 +34,8 @@ private slots:
 
     void on_Quit_clicked();
 
+    bool warrn ();
+
 private:
     Ui::MainWindow *ui;
     QString filename;//文件名
